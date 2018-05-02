@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <canvas id="chart"></canvas>
+        <script src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.12/dist/global/Rx.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <script>
+            class M1Bar {
+                constructor(datetime, open, high, low, close) {
+                    this.datetime = datetime;
+                    this.open = open;
+                    this.high = high;
+                    this.low = low;
+                    this.close = close;
+                }
+            }
+            
+            async function getHistoricalData(name) {
+                return fetch('/EURUSD_M1')
+            }
+
+            const chartCtx = document.getElementById('chart').getContext('2d');
+            
+            const fxChart = new Chart(chartCtx, {
+                type: 'bar',
+                datasets: [{
+                    label: 'time',
+                    data: [12, 19, 3, 5, 2, 3]
+                }]
+            });
+
+            // const today = '2018-04-26';
+            // let api;
+            // // https://fetch.spec.whatwg.org/#fetch-api
+            // const fixerUrl = new URL(`http://data.fixer.io/api/${today}`);
+            // const params = {
+            //         access_key: 'b5c322028a7ae41b27f90de6e97529ef',
+            //     };
+            // Object.keys(params).forEach(key => fixerUrl.searchParams.append(key, params[key]))
+            // fetch(fixerUrl).then(res => {
+            //     console.log(res.json());
+            // })
+            // .catch(e => console.error(e));
+        </script>
+    </body>
+</html>

@@ -4,3 +4,8 @@ version = "0.1.0"
 authors = ["Dowon Cha <dowoncha.cs@gmail.com>"]
 
 [dependencies]
+chrono = "0.4"
+hyper = "0.11"
+hyper-tls = "0.1.3"
+tokio-core = "0.1"
+futures = "0.1"

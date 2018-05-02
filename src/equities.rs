@@ -76,3 +76,56 @@ fn calculate_moving_average(prices: &[f64], n_periods: usize) -> Vec<f64> {
     
     ma
 }
+
+/***** VOLATILITY *****/
+/**
+ * Strategies
+ * 1. Compute range of values observed during a period.
+ * 1a.  Simplest way of viewing volatility
+ */
+
+struct VolatilityCalculator {
+
+}
+
+/**
+ * Assume prices.len() > 0
+ */
+fn calc_volatility_by_range(prices: &[f64]) -> Option<f64> {
+    if prices.len() < 1 {
+        // Should return error
+        return None;
+    }
+
+    // Find min and max of ranges
+    let mut min = prices[0];
+    let mut max = min;
+
+    for i in 1..prices.len() {
+        if prices[i] < min {
+            min = prices[i];
+        }
+        if prices[i] > max {
+            max = prices[i];
+        }
+    }
+
+    Some(max - min)
+}
+
+/**
+ * 2. Calculate average range for a given time period
+ */
+
+//  * 3. Use Standard deviation
+
+/**
+ * Responsible for calculating values that are specific to a single time series
+ */
+struct TimeSeries {
+
+}
+
+struct CorrelationCalculator {
+
+}
