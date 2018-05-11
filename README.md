@@ -1,6 +1,9 @@
-# Financial Library
+# Financial Algorithmic Trading Library
 
-# TODO:
-OANDA Best Practices
-1. Limit new connections to 2/s
-2. Limit established connection to 100/s
+Primarily used for Forex strategy backtesting.
+Will eventually be able to connect to brokers (e.g. Oanda) for demo/real trades.
+
+Based off of PyAlgoTrade.
+
+Main Traits are 
+Strategy, Broker, Feed, Technical
