@@ -24,7 +24,7 @@ impl<T> SequenceDataSeries<T> {
         }
     }
 
-    pub fn append(&mut self, value) {
+    pub fn append(&mut self, value: T) {
         self.append_with_datetime(None, value);
     }
 

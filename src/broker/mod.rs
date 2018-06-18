@@ -69,9 +69,9 @@ pub trait Broker {
         DispatcherPriority::Broker
     }
 
-    fn active_orders(&self) -> &[Order];
+    // fn active_orders(&self) -> &[Order];
 
-    fn submit_order(&self, order: Order) -> Result<(), &str>;
+    // fn submit_order(&self, order: Order) -> Result<(), &str>;
 
     fn cancel_order(&self, order_id: &str) -> Result<(), &str>;
 

@@ -1,4 +1,4 @@
-use common::{Bars, Frequency, Instrument, BarDataSeries, Subject};
+use common::{Bar, Bars, Frequency, Instrument, BarDataSeries, Subject};
 
 use std::path::Path;
 
@@ -16,15 +16,29 @@ pub trait BarFeed : Feed {
     fn data_series(&self) -> BarDataSeries;
 }
 
+/// Non real-time Bar feed
+/// Hold barfeed 
+pub struct MemoryBarFeed {
+    started: bool
+}
+
+impl MemoryBarFeed {
+    
+}
+
 pub struct CsvBarFeed {}
 
 impl CsvBarFeed {
     pub fn new(frequency: Frequency, /*timezone*/) -> Self {
+        Self {
 
+        }
     }
 
     pub fn max_capacity(frequency: Frequency, N: usize) -> Self {
+        Self {
 
+        }
     }
 
     pub fn add_bars_from_csv<P: AsRef<Path>>(&mut self, path: P) {

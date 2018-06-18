@@ -1,14 +1,8 @@
 extern crate financial;
-use financial::Bars;
+use financial::{BarFeed, Bars};
 use financial::strategy::{BacktestingStrategy};
 
 use std::error::Error;
-
-trait BarFeed { }
-
-struct CsvFeed { }
-
-impl BarFeed for CsvFeed { }
 
 struct MyStrategy {
     base: BacktestingStrategy,
